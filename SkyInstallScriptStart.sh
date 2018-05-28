@@ -33,6 +33,8 @@
  
 ##### UPDATING RESPOSITORY & UPGRADING OS
 echo "Updating respository and perfoming OS upgrade right now..."
+sudo rm /var/lib/dpkg/lock    
+sudo rm /var/cache/apt/archives/lock
 sudo apt-get update && sudo apt-get upgrade -y
 echo "Repository Update and OS Upgrade succesfully done!"
  
