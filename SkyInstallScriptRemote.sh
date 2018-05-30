@@ -98,7 +98,7 @@ is_alive_ping()
                 fi
   fi
 }
-for i in 192.168.1.{112..118}; do is_alive_ping $i; done
+for i in 192.168.1.{122..128}; do is_alive_ping $i; done
 
 
 ###### Install sshpass in order to login to OrangePI boards 2-8 using ssh
@@ -109,54 +109,54 @@ sudo mkdir ~/.ssh/
 sudo touch ~/.ssh/known_hosts
 
 ###### Scan and add keys to trusted list
-ssh-keyscan -H 192.168.1.112 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.1.113 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.1.114 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.1.115 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.1.116 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.1.117 >> ~/.ssh/known_hosts
-ssh-keyscan -H 192.168.1.118 >> ~/.ssh/known_hosts
+ssh-keyscan -H 192.168.1.122 >> ~/.ssh/known_hosts
+ssh-keyscan -H 192.168.1.123 >> ~/.ssh/known_hosts
+ssh-keyscan -H 192.168.1.124 >> ~/.ssh/known_hosts
+ssh-keyscan -H 192.168.1.125 >> ~/.ssh/known_hosts
+ssh-keyscan -H 192.168.1.126 >> ~/.ssh/known_hosts
+ssh-keyscan -H 192.168.1.127 >> ~/.ssh/known_hosts
+ssh-keyscan -H 192.168.1.128 >> ~/.ssh/known_hosts
 
 ###### In order to automatically install OrangePI 2-8 we need to login via SSH and run the SkyInstallScript...
 ###### ... for secondory boards.
 ###### Connect to OrangePI 2 and run installation
-sshpass -p $RootPassword ssh root@192.168.1.112 << EOF
+sshpass -p $RootPassword ssh root@192.168.1.122 << EOF
 sudo wget https://raw.githubusercontent.com/bikkio/SkyInstallScript/master/SkyInstallScriptSecondary.sh
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 3 and run installation
-sshpass -p $RootPassword ssh root@192.168.1.113 << EOF
+sshpass -p $RootPassword ssh root@192.168.1.123 << EOF
 sudo wget https://raw.githubusercontent.com/bikkio/SkyInstallScript/master/SkyInstallScriptSecondary.sh
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 4 and run installation
-sshpass -p $RootPassword ssh root@192.168.1.114 << EOF
+sshpass -p $RootPassword ssh root@192.168.1.124 << EOF
 sudo wget https://raw.githubusercontent.com/bikkio/SkyInstallScript/master/SkyInstallScriptSecondary.sh
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 5 and run installation
-sshpass -p $RootPassword ssh root@192.168.1.115 << EOF
+sshpass -p $RootPassword ssh root@192.168.1.125 << EOF
 sudo wget https://raw.githubusercontent.com/bikkio/SkyInstallScript/master/SkyInstallScriptSecondary.sh
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 6 and run installation
-sshpass -p $RootPassword ssh root@192.168.1.116 << EOF
+sshpass -p $RootPassword ssh root@192.168.1.126 << EOF
 sudo wget https://raw.githubusercontent.com/bikkio/SkyInstallScript/master/SkyInstallScriptSecondary.sh
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 7 and run installation
-sshpass -p $RootPassword ssh root@192.168.1.117 << EOF
+sshpass -p $RootPassword ssh root@192.168.1.127 << EOF
 sudo wget https://raw.githubusercontent.com/bikkio/SkyInstallScript/master/SkyInstallScriptSecondary.sh
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh &&  exit
 EOF
 ###### Connect to OrangePI 8 and run installation
-sshpass -p $RootPassword ssh root@192.168.1.118 << EOF
+sshpass -p $RootPassword ssh root@192.168.1.128 << EOF
 sudo wget https://raw.githubusercontent.com/bikkio/SkyInstallScript/master/SkyInstallScriptSecondary.sh
 sudo chmod 755 ~/SkyInstallScriptSecondary.sh;
 sudo sh ~/SkyInstallScriptSecondary.sh && exit
